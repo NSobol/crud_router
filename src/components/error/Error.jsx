@@ -1,0 +1,17 @@
+
+import { useEffect } from "react";
+import "./error.css";
+
+export default function Error({ error, errorHandler }) {
+  useEffect(() => {
+    const timerID = setTimeout(() => errorHandler(null), 5 * 1000);
+
+    return () => clearTimeout(timerID);
+  }, [errorHandler]);
+
+  return (
+    <div className="error">
+      <span>{error}</span>
+    </div>
+  );
+}

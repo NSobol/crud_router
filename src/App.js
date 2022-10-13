@@ -1,23 +1,15 @@
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import PostsProvider from "./components/postsprovider/PostsProvider.jsx";
+import HomePage from "./components/homepage/HomePage.jsx";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from "./components/menu/Menu";
-import PostList from "./components/postlist/PostList";
-import AddForm from "./components/addform/AddForm";
 
 function App() {
-  return (
+  <PostsProvider>
     <BrowserRouter>
-      <div>
-        <Menu />
-        <div className="page">
-          <Routes>
-            <Route path="/" element={<PostList />} />
-            <Route path="/posts/new" element={<AddForm />} />
-          </Routes>
-        </div>
-      </div>
+      <HomePage />
     </BrowserRouter>
-  );
+  </PostsProvider>;
 }
 
 export default App;

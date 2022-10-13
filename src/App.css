@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.eot");
+  src: local("☺"), url("./fonts/Roboto-Regular.woff") format("woff"),
+    url("./fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.eot");
+  src: local("☺"), url("./fonts/Roboto-Medium.woff") format("woff"),
+    url("./fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Bold.eot");
+  src: local("☺"), url("./fonts/Roboto-Bold.woff") format("woff"),
+    url("./fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./fonts/icomoon.eot");
+  src: url("./fonts/icomoon.eot") format("embedded-opentype"),
+    url("./fonts/icomoon.ttf") format("truetype"),
+    url("./fonts/icomoon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e900";
+  font-weight: 900;
+}
+.icon-comment:before {
+  content: "\e901";
+}
+.icon-send:before {
+  content: "\e902";
+}
+.icon-stars:before {
+  content: "\e903";
+  font-weight: 900;
+}
+.icon-thumb_down:before {
+  content: "\e904";
+}
+.icon-thumb_up:before {
+  content: "\e905";
+}
+
+body {
+  background: #ecf0f1;
+}
+
+a,
+a:hover {
+  color: #000;
+}
+
+.app {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1em;
+}
+.app__post {
+  margin-top: 1em;
+}
+
+.app__form {
+  padding: 0.7em;
+  border: 2px solid #bbd1d4;
+  border-radius: 0.3em;
+  background: #fff;
+  text-align: right;
+}
+
+.post {
+  border: 2px solid #bbd1d4;
+  background: #fff;
+  border-radius: 0.3em;
+}
+.post__body {
+  padding: 1em;
+  border-bottom: 2px solid #bbd1d4;
+  position: relative;
+}
+.post__body.heading {
   display: flex;
-  flex-direction: column;
+}
+.post__body.heading__avatar {
+  width: 4.5em;
+  height: 4.5em;
+}
+
+.heading-content {
+  font-weight: 900;
+  padding: 0.5em;
+}
+.heading-content__title {
+  color: #006fa0;
+  font-size: 1.5rem;
+}
+.details {
+  margin-top: 1em;
+}
+
+.details__text-item.icon-star {
+  display: inline-block;
+  margin-bottom: -1px;
+}
+.icon-star:nth-child(n + 3) {
+  margin-left: 1em;
+}
+
+.heading__btn.icon-close {
+  font-size: 2rem;
+  position: absolute;
+  background: inherit;
+  right: 0.5em;
+  opacity: 0.6;
+}
+
+.post-body__body {
+  padding: 0.5em 0;
+}
+.post-body {
+  font-size: 2rem;
+  border-bottom: 2px solid #bbd1d4;
+  word-break: break-word;
+}
+.post-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+.post-footer__text-item {
+  background: inherit;
+}
+
+.post__footer {
+  display: flex;
+  padding: 1em;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.post-footer__avatar {
+  width: 3.5em;
+  height: 3.5em;
+}
+.post-footer__form {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.7em;
+  padding: 0 1.2em;
+  width: 100%;
+  border: 2px solid #bbd1d4;
+  border-radius: 2em;
+  background: #ecf0f1;
+}
+.footer-form__input {
+  font-size: 1.2rem;
+  padding: 0.7em 0;
+  background: inherit;
+  width: 100%;
+}
+.footer-form__btn {
+  background: inherit;
+  font-size: 2rem;
+  opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
+.form__textarea-box {
+  border-bottom: 2px solid #bbd1d4;
+  padding: 1em;
+}
+.form__textarea-box.form__input {
+  background: inherit;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.addform {
+  border: 2px solid #bbd1d4;
+  background: #fff;
+  border-radius: 0.3em;
+}
+.heading__avatar {
+  width: 4.5em;
+  height: 4.5em;
+}
+.addform__btn-box {
+  padding: 1em 0;
+  margin: 0 1em;
+  border-bottom: 2px solid #bbd1d4;
+  text-align: right;
+}
+.addform__btn {
+  font-size: 2rem;
+  font-weight: 900;
+  opacity: 0.5;
+  background: inherit;
+}
+
+.addform__btn-box.editing {
+  display: flex;
+  justify-content: space-between;
+}
+.addform__title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.form__btn-box {
+  padding: 1em 1em 1em 0;
+  text-align: right;
+}
+.form__btn,
+.app-form__btn {
+  display: inline-block;
+  cursor: pointer;
+}
+.form__btn:hover,
+.app-form__btn:hover {
+  color: #fff;
+}
+
+.text-item {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  font-weight: 900;
+}
+
+.app-form__btn,
+.form__btn {
+  padding: 0.5em 1em;
+  background: #006fa0;
+  color: #fff;
+  font-size: 1.5em;
+  border-radius: 0.3em;
+  font-weight: 900;
+}
+
+.avatar {
+  border: 1px solid #bbd1d4;
+  border-radius: 50%;
+}
+
+.post__footer.post-footer.edit {
+  justify-content: end;
+  padding: 0;
+}
+.form__btn-box.delete .form__btn {
+  background: #fc5c65;
 }

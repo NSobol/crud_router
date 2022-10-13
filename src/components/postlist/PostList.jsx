@@ -1,13 +1,14 @@
 import React from "react";
+import PostItem from "../postitem/PostItem";
 
 function PostList(props) {
   const { posts } = props;
-	return (
+  return (
     <ul className="posts-list">
       {posts.map((post, index) => {
         return (
           <li className="posts-list-item" key={index}>
-            <img src={post.img} alt={"post.category"} />
+            <PostItem post={post.text} />
           </li>
         );
       })}
