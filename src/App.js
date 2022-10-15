@@ -5,11 +5,13 @@ import HomePage from "./components/homepage/HomePage.jsx";
 import "./App.css";
 
 function App() {
-  <PostsProvider>
-    <BrowserRouter>
-      <HomePage />
-    </BrowserRouter>
-  </PostsProvider>;
+  return (
+    <PostsProvider>
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    </PostsProvider>
+  );
 }
 
 export default App;

@@ -25,7 +25,7 @@ export default function NewPost() {
     };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/posts`,
+        `${process.env.REACT_APP_BASE_URL}`,
         options
       );
       if (!response.ok) {
