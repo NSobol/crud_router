@@ -29,7 +29,7 @@ export default function NewPost() {
         options
       );
       if (!response.ok) {
-        throw new Error("Ошибка добавления поста");
+        console.log("Ошибка добавления поста");
       }
       setClick(true);
     } catch (err) {
